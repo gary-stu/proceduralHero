@@ -4,6 +4,7 @@
 
 This script will generate a random playlist of files to be played with mpv, before starting that playlist in mpv.
 The name is a pun: procedural from procedurally generated games, Hero from Guitar Heroes and the like, the initials giving us the chemistry scale for acids.
+
 Note: We got ourselves a great name, still recruiting for the logo.
 
 ## Prerequisites
