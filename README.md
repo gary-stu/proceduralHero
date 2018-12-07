@@ -3,6 +3,7 @@
 ## Introduction
 
 This script will generate a random playlist of files to be played with mpv, before starting that playlist in mpv.
+
 The name is a pun: procedural from procedurally generated games, Hero from Guitar Heroes and the like, the initials giving us the chemistry scale for acids.
 
 Note: We got ourselves a great name, still recruiting for the logo.
@@ -11,11 +12,12 @@ Note: We got ourselves a great name, still recruiting for the logo.
 
 - Python: Duh.
 - mpv : Windows and OSX binaries are packaged in the release, but linux users HAVE to install it.
+
 I still recommend to install mpv even on Windows and OSX. Because it's good.
 
 ## Installing
 
-1.download pH.py or extract the release archive.
+1. download pH.py or extract the release archive.
 2. edit pH.py to set it up properly:
 ```
 	self.rounds_path = r'rounds'
