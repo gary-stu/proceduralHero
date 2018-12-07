@@ -42,4 +42,4 @@ Well. Just run it. With Python, you know.
 
 ## License
 
-This code is licensed under [the Unlicense](https://github.com/gary-stu/FL/blob/master/LICENSE).
+This code is licensed under [the Unlicense](https://unlicense.org/).
