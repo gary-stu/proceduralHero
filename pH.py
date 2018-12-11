@@ -8,7 +8,9 @@ import platform
 class pH:
 	# Initialize the settings
 	def __init__(self):
+	
 		# User defined settings
+		
 		# Pathes start with a r: r'C:\Users\Anon', or r'/home/Anon'
 		# Pathes can be absolute pathes or relative Pathes (from where the python file is located)
 		self.rounds_path = r'rounds'
@@ -17,6 +19,7 @@ class pH:
 		
 		# use_* are boolean
 		# must be True or False
+		self.use_fullscreen = True
 		self.use_intervals = True
 		self.use_custom_finish = True
 		
@@ -30,6 +33,7 @@ class pH:
 		# You probably won't ever have to change this, unless you use obscure file formats
 		self.extensions = ['webm', 'mkv', 'mp4', 'avi', 'mov', 'wmv', 'mpg', 'mpeg']
 		
+		
 		# End of user defined settings
 		self.playlist = "pH_playlist_0.txt"
 		nb = 0
@@ -41,7 +45,7 @@ class pH:
 		self.intervals = []
 		self.finishes = []
 		self.messages = []
-		self.mpv_installed = True
+		self.mpv_installed = False
 
 
 	# Print str to screen and put it in the message list for possible output to logfile
@@ -160,6 +164,7 @@ class pH:
 	def procedural_Hero(self):
 		self.info('Generating a new pH')
 		nb_rounds = randint(self.min_rounds, self.max_rounds)
+		self.info('Number of rounds: ' + str(nb_rounds))
 		i = 0
 		pl = open(self.playlist, 'a')
 		while i < (nb_rounds - 1):
@@ -175,10 +180,11 @@ class pH:
 				pl.write(interval + '\n')
 			self.info('')
 			i += 1
+		
 		round = ""
-		if self.use_custom_finish:
+		if self.use_custom_finish: 
 			round = choice(self.finishes)
-		else:
+		else: 
 			round = choice(self.rounds)
 		self.info('Last round: ' + round)
 		pl.write(round)
@@ -190,7 +196,6 @@ class pH:
 			self.info(l.split('\n')[0])
 		pl.close()
 		self.info('')
-		self.info('Number of rounds : ' + str(nb_rounds))
 
 
 	# Play the generated playlist
@@ -203,10 +208,11 @@ class pH:
 		if not self.mpv_installed:
 			myOs = platform.system()
 			if myOs == 'Windows':
-				mpv = 'exes/mpv_win.exe'
+				mpv = 'binaries/Windows/mpv.exe'
 			elif myOs == 'Darwin':
-				mpv = 'exes/mpv_osx'
+				mpv = 'binaries/OSX/mpv'
 			elif myOs == 'Linux':
+			
 				self.info('No static binary available for Linux')
 				self.info('Please install mpv through your package manager')
 				self.info('or through mpv-build') 
@@ -220,7 +226,8 @@ class pH:
 	
 		print('Starting in 5 seconds, prepare yourself!')
 		sleep(5)
-		Popen(mpv + ' -fs --playlist="' + self.playlist + '"', shell=True)
+		if self.use_fullscreen: mpv += ' -fs'
+		Popen(mpv + ' --playlist="' + self.playlist + '"', shell=True)
 
 
 	# main

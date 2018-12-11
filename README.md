@@ -25,6 +25,7 @@ I still recommend to install mpv even on Windows and OSX. Because it's good.
 	self.finishes_path = r'finishes'
 	self.use_intervals = True
 	self.use_custom_finish = True
+	self.use_fullscreen = True
 	self.min_rounds = 6
 	self.max_rounds = 16
 ```
@@ -33,14 +34,15 @@ I still recommend to install mpv even on Windows and OSX. Because it's good.
    - self.finishes_path: path to files to be played as last round.
    - self.use_intervals: If you set this to False, all interval related things will be skipped (tl;dr: you won't play intervals).
    - self.use_custom_finish: If this is true, pH.py will use one file from the finishes_path to play last round. Else, it'll be from the rounds_path.
+   - self.use_fullscreen: this one should be self explanatory
    - self.min_rounds: The minimum number of rounds you want (6 means 6 rounds + 5 intervals, if you want them).
    - self.max_rounds: The maximum number of rounds. In case you didn't understand. Because the number will be random in between those two.
-3. You may edit if you want/need the self.extensions. But I doubt you'll need to do it, unless you want to use pH to play music.
+3. You may edit if you want/need the self.extensions. But I doubt you'll need to do it, unless you want to use pH to play music or really outdated videos.
 4. You are now a procedural Hero. Act like one.
 
 ## How to use
 
-Well. Just run it. With Python, you know.
+Well. Just run it, you know. With Python.
 
 ## License
 
